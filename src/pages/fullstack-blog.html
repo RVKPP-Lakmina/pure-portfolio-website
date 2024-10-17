@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A detailed blog post about building my first full-stack application with React and Node.js by Pramesh Lakmina."
+    />
+    <title>Building My First Full Stack Application | Pramesh Lakmina</title>
+    <link rel="stylesheet" href="../../public/styles/styles.css" />
+  </head>
+  <body>
+    <header class="hero-header">
+      <input type="checkbox" id="menuToggle" />
+      <label for="menuToggle" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <nav id="main-nav" class="main-nav">
+        <a href="../index.html">Home</a>
+        <a href="../skills.html">Skills</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blogs.html" class="active">Blogs</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <h1 class="main-title">Building My First Full Stack Application</h1>
+      <p class="tagline">
+        The Journey of Developing a Complete Web Application
+      </p>
+    </header>
+
+    <main class="full-blog-post-container">
+      <section class="blog-content">
+        <article class="full-blog-post">
+          <header>
+            <h2>Building My First Full Stack Application</h2>
+            <p>
+              By <strong>Pramesh Lakmina</strong> |
+              <time datetime="2024-10-10">October 10, 2024</time>
+            </p>
+          </header>
+
+          <img
+            src="../../public/images/fullstack Project Diagram.jpg"
+            alt="Full Stack Project Diagram"
+            class="blog-image"
+          />
+
+          <p>
+            As a developer, nothing quite beats the excitement and satisfaction
+            of building your first full stack application from scratch. It's a
+            rite of passage that every software engineer experiences, and for
+            me, it marked a turning point in my career. In this blog post, I’m
+            going to walk you through the process of creating my first full
+            stack web application using React, Node.js, Express, and MongoDB.
+          </p>
+
+          <p>
+            The application I built was a simple to-do list app that allowed
+            users to create, edit, and delete tasks. Though the project seems
+            simple at first glance, it allowed me to learn a vast array of
+            skills, including front-end development, back-end programming,
+            database management, and deployment. By the end of this post, you'll
+            have a clear picture of what it's like to develop a full stack
+            application and the challenges I faced along the way.
+          </p>
+
+          <h3>Project Overview</h3>
+          <p>
+            The idea for the project came from my desire to build something that
+            was not only functional but also practical for day-to-day use. I
+            chose a to-do list app because it’s an application I use regularly,
+            and I wanted to make one that worked exactly the way I needed it to.
+            It involved creating a front-end where users could interact with the
+            app, a back-end API to manage the data, and a database to store the
+            tasks.
+          </p>
+
+          <p>Technologies I used for the project include:</p>
+          <ul>
+            <li><strong>React.js</strong> for the front-end user interface</li>
+            <li>
+              <strong>Node.js</strong> with <strong>Express</strong> for the
+              back-end API
+            </li>
+            <li><strong>MongoDB</strong> as the database</li>
+            <li><strong>GitHub</strong> for version control</li>
+            <li><strong>Heroku</strong> for deploying the application</li>
+          </ul>
+
+          <h3>The Front-End: React</h3>
+          <p>
+            Building the front-end was my first exposure to React, and I
+            immediately fell in love with its component-based architecture. It
+            was so much more intuitive than writing raw HTML, CSS, and vanilla
+            JavaScript. In React, each part of my application became a reusable
+            component, whether it was the input form for adding tasks, the list
+            displaying all tasks, or the button for deleting them.
+          </p>
+
+          <p>
+            The learning curve for React was initially steep, but once I grasped
+            the concept of components, JSX (a syntax extension for JavaScript
+            that allows HTML-like code), and the state, things started to make
+            sense. I used hooks like <code>useState</code> and
+            <code>useEffect</code> to manage the state and lifecycle of my
+            components.
+          </p>
+
+          <h4>Challenges I faced with React:</h4>
+          <ul>
+            <li>
+              Understanding the proper way to pass data between parent and child
+              components
+            </li>
+            <li>
+              Managing state efficiently without causing unnecessary re-renders
+            </li>
+            <li>
+              Learning how to handle side effects, like fetching data from the
+              back-end API, with <code>useEffect</code>
+            </li>
+          </ul>
+
+          <h3>The Back-End: Node.js & Express</h3>
+          <p>
+            After building the front-end, it was time to move to the back-end.
+            This was where I set up an API that the React app could communicate
+            with. I chose Node.js for the back-end because of its fast,
+            event-driven, non-blocking I/O model. Express, a popular Node.js
+            framework, made it easier to set up routes for handling HTTP
+            requests.
+          </p>
+
+          <p>
+            I created a simple RESTful API that allowed the following
+            operations:
+          </p>
+          <ul>
+            <li><strong>POST</strong>: Create a new task</li>
+            <li><strong>GET</strong>: Retrieve all tasks</li>
+            <li><strong>PUT</strong>: Update an existing task</li>
+            <li><strong>DELETE</strong>: Remove a task</li>
+          </ul>
+
+          <h4>Challenges I faced with Node.js & Express:</h4>
+          <ul>
+            <li>Setting up proper error handling in Express routes</li>
+            <li>
+              Managing asynchronous requests and ensuring data consistency
+            </li>
+            <li>
+              Securing the API with proper authentication (which I added later)
+            </li>
+          </ul>
+
+          <h3>Working with MongoDB</h3>
+          <p>
+            For data storage, I chose MongoDB, a NoSQL database. One of the
+            reasons I selected MongoDB was because of its flexibility with
+            unstructured data and the ease of integration with Node.js through
+            the
+            <code>mongoose</code> package. In my app, each task was represented
+            as a document in a MongoDB collection. This collection stored
+            information like the task description, completion status, and
+            timestamps.
+          </p>
+
+          <p>Setting up MongoDB required me to learn about:</p>
+          <ul>
+            <li>Creating schemas with Mongoose</li>
+            <li>Connecting the MongoDB database to my Express app</li>
+            <li>Performing CRUD operations (Create, Read, Update, Delete)</li>
+          </ul>
+
+          <h4>Challenges I faced with MongoDB:</h4>
+          <ul>
+            <li>
+              Defining the schema structure correctly to ensure flexibility
+            </li>
+            <li>Handling database errors gracefully</li>
+            <li>
+              Ensuring that the data was always in sync with the front-end
+            </li>
+          </ul>
+
+          <h3>Deployment to Heroku</h3>
+          <p>
+            Once the app was functioning locally, I had to deploy it to make it
+            accessible to others. I chose Heroku for deployment because of its
+            simplicity and seamless integration with GitHub. With Heroku, I
+            could continuously deploy my app every time I pushed new code to the
+            repository. The process involved setting up a
+            <code>Procfile</code> and configuring environment variables for
+            MongoDB and other sensitive data.
+          </p>
+
+          <p>Deploying my app exposed me to concepts like:</p>
+          <ul>
+            <li>
+              Environment variables and their role in securing sensitive
+              information
+            </li>
+            <li>Configuring Heroku dynos to ensure the app ran efficiently</li>
+            <li>
+              Managing scaling concerns as more users began accessing the
+              application
+            </li>
+          </ul>
+
+          <h3>Key Learnings</h3>
+          <p>
+            Building this full stack application was an incredible learning
+            experience. I learned how to structure a web app from the front-end
+            to the back-end, how to handle asynchronous programming, and how to
+            deploy an app in a production environment. While I faced many
+            challenges, the satisfaction of seeing everything come together was
+            worth every late night spent debugging code.
+          </p>
+
+          <h3>Future Improvements</h3>
+          <p>
+            Looking back, there are several areas where I can improve this
+            project:
+          </p>
+          <ul>
+            <li>
+              Adding authentication so that users can sign in and manage their
+              own tasks
+            </li>
+            <li>
+              Improving the user interface by using more sophisticated CSS or a
+              framework like Bootstrap
+            </li>
+            <li>
+              Optimizing the performance of the app as the task list grows
+              larger
+            </li>
+            <li>
+              Integrating automated testing for both the front-end and back-end
+            </li>
+          </ul>
+
+          <h3>Conclusion</h3>
+          <p>
+            In conclusion, building a full stack application is not only a great
+            way to learn about different technologies, but it also provides a
+            sense of accomplishment that few other projects can offer. The
+            process of combining a front-end, a back-end, and a database into
+            one cohesive application is immensely rewarding. If you're a
+            developer looking to take your skills to the next level, I highly
+            recommend starting your own full stack project.
+          </p>
+
+          <p>
+            Thanks for reading! If you have any questions or thoughts, feel free
+            to reach out to me. I’m always happy to chat with fellow developers!
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Pramesh Lakmina. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

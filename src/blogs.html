@@ -8,7 +8,12 @@
   </head>
   <body>
     <header class="hero-header">
-      <nav>
+      <input type="checkbox" id="menuToggle" />
+      <label for="menuToggle" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <nav id="main-nav" class="main-nav">
         <a href="index.html">Home</a>
         <a href="skills.html">Skills</a>
         <a href="projects.html">Projects</a>
@@ -29,7 +34,9 @@
           through the journey of building my first full stack project using
           React for the frontend and Node.js with MongoDB for the backend...
         </p>
-        <a href="#" class="read-more">Read more</a>
+        <div>
+          <a href="./pages/fullstack-blog.html" class="read-more">Read more</a>
+        </div>
       </article>
 
       <article class="blog-post">
@@ -41,7 +48,11 @@
           my spare time. In this blog, I’ll share my experience of building a
           simple robotic arm from scratch, integrating software and hardware...
         </p>
-        <a href="#" class="read-more">Read more</a>
+        <div>
+          <a href="./pages/mechatronics-blog.html" class="read-more"
+            >Read more</a
+          >
+        </div>
       </article>
     </section>
 
@@ -49,9 +60,15 @@
       <div class="footer-content">
         <p>&copy; 2024 Pramesh Lakmina | All Rights Reserved.</p>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/RVKPP-Lakmina" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/rvkp-priyashan-lakmina/"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
     </footer>

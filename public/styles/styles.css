@@ -1,7 +1,8 @@
-/* Fonts and imports */
+/* Importing Google Fonts and Font Awesome for icons */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
 
+/* Custom Font Faces */
 @font-face {
   font-family: "font-italic";
   src: url("../fonts/Poppins-Italic.ttf");
@@ -28,10 +29,11 @@
 }
 
 @font-face {
-  font-family: "font-semibold ";
+  font-family: "font-semibold";
   src: url("../fonts/Poppins-SemiBold.ttf");
 }
 
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -39,13 +41,40 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Body Styles */
 body {
   background: linear-gradient(135deg, #eafbff, #0a0391);
   color: #fff;
   transition: background 0.5s ease;
 }
 
-/* Header */
+/* Email Input Styles */
+input[type="email"] {
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+/* Email Input Focus States */
+input[type="email"]:focus:invalid {
+  border: 2px solid red;
+}
+
+input[type="email"]:focus:valid {
+  border: 2px solid green;
+}
+
+/* Email Input Validation States */
+input[type="email"]:not(:placeholder-shown):invalid {
+  border: 2px solid red;
+}
+
+input[type="email"]:not(:placeholder-shown):valid {
+  border: 2px solid green;
+}
+
+/* Hero Header Section */
 .hero-header {
   text-align: center;
   padding: 4rem 2rem;
@@ -53,6 +82,11 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+.hero-header input {
+  display: none;
+}
+
+/* Navigation Styles */
 .hero-header nav {
   margin-bottom: 2rem;
 }
@@ -66,6 +100,7 @@ body {
   position: relative;
 }
 
+/* Navigation Hover and Active States */
 .hero-header nav a:hover,
 .hero-header nav a.active {
   color: #ffd700;
@@ -73,6 +108,16 @@ body {
   transition: border-bottom 0.3s ease-in;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* About Me Section */
 .about-me {
   display: flex;
   align-items: center;
@@ -82,13 +127,14 @@ body {
   margin-top: 3rem;
 }
 
+/* Profile Image Styles */
 .profile-img img {
   border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  height: 20rem;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  height: 20rem;
 }
 
+/* About Content Styles */
 .about-content h2 {
   font-size: 2.5rem;
   color: #ffd700;
@@ -103,12 +149,14 @@ body {
   animation: fadeIn 1s ease;
 }
 
+/* First Letter Styling in About Content */
 .about-content p::first-letter {
   font-size: 1.8rem;
   font-weight: 600;
   color: #ffd700;
 }
 
+/* Main Title Styles */
 .main-title {
   font-size: 3rem;
   font-weight: 600;
@@ -116,6 +164,7 @@ body {
   animation: fadeIn 1s ease-in-out;
 }
 
+/* Tagline Styles */
 .tagline {
   font-size: 1.5rem;
   color: #ffd700;
@@ -123,10 +172,12 @@ body {
   animation: slideUp 1.2s ease-in-out;
 }
 
+/* Call to Action Button Styles */
 .cta-button {
   margin: 1rem 3rem;
   display: inline-block;
   padding: 1rem 2rem;
+  text-decoration: none;
   background-color: #ffd700;
   color: #0a0391;
   font-weight: 600;
@@ -136,6 +187,7 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Call to Action Button Hover State */
 .cta-button:hover {
   background-color: #fff;
   transform: scale(1.05);
@@ -153,6 +205,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Skills List Styles */
 .skills-list {
   display: flex;
   justify-content: center;
@@ -168,78 +221,80 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* Skills List Hover State */
 .skills-list li:hover {
-  transform: scale(1.05);
+  transform: scale(1.5);
+  list-style-type: none;
+  background-color: #fff;
+  color: #0a0391;
 }
 
 /* Projects Section */
-
 .projects-section {
   text-align: center;
   padding: 4rem 2rem;
+}
 
-  .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    max-height: max-content;
-    gap: 2rem;
-    margin-top: 2rem;
-    align-items: center;
+/* Projects Container Styles */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  max-height: max-content;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: center;
+}
 
-    .projects-section h2 {
-      font-size: 2.5rem;
-      color: #ffd700;
-      margin-bottom: 2rem;
-    }
+/* Project Card Styles */
+.project-card {
+  border: 2px solid #ffd700;
+  padding: 4rem 2rem;
+  transform: perspective(1px) translateZ(0);
+  transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+  overflow: hidden;
+}
 
-    .project-card {
-      /* background: rgba(10, 3, 145, 0.8); */
-      border: 2px solid #ffd700;
-      padding: 4rem 2rem;
-      transform: perspective(1px) translateZ(0);
-      transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
-      overflow: hidden;
-    }
+/* Project Card Before Pseudo-element */
+.project-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0;
+  clip-path: circle(0.5% at 50% 50%);
+  background: rgba(10, 3, 145, 0.8);
+  transition: 1s;
+  opacity: 1;
+}
 
-    .project-card::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      bottom: 0;
-    }
+/* Project Card Hover State */
+.project-card:hover::before {
+  clip-path: circle(100% at 50% 50%);
+}
 
-    .project-card::before {
-      clip-path: circle(0.5% at 50% 50%);
-      background: rgba(10, 3, 145, 0.8);
-      transition: 1s;
-      opacity: 1;
-    }
-    .project-card:hover::before {
-      clip-path: circle(100% at 50% 50%);
-    }
-
-    .project-card:hover {
-      color: white;
-      /* border: none; */
-      transition: all 1s cubic-bezier(0.86, 0.01, 0.15, 0.99);
-      border-radius: 10rem;
-      box-shadow: 0 0 0 10px rgba(250, 250, 250, 0.1);
-    }
-  }
+.project-card:hover {
+  color: white;
+  transform: scale3d(1.05, 1.05, 1);
+  transition: all 1s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+  border-radius: 10rem;
+  box-shadow: 0 0 0 10px rgba(250, 250, 250, 0.1);
 }
 
 /* Blog Section */
 .blog-section {
   padding: 3rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
 }
 
+/* Blog Post Styles */
 .blog-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: rgba(10, 3, 145, 0.9);
   padding: 2rem;
   border-radius: 10px;
@@ -266,6 +321,7 @@ body {
   line-height: 1.6;
 }
 
+/* Read More Button Styles */
 .read-more {
   display: inline-block;
   margin-top: 1.5rem;
@@ -278,22 +334,81 @@ body {
   transition: background-color 0.3s ease;
 }
 
+/* Read More Button Hover State */
 .read-more:hover {
   background-color: #fff;
+}
+
+/* Full Blog Post Container */
+.full-blog-post-container {
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+
+  .blog-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    color: gray;
+    margin: 0 auto;
+    background-color: white;
+  }
+
+  .full-blog-post {
+    h2 {
+      color: #070707bd;
+    }
+
+    h3 {
+      color: #070707bd;
+      margin-top: 3rem;
+    }
+
+    p {
+      margin-top: 2rem;
+    }
+  }
+
+  .blog-image {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .blog-content ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+  }
+
+  .blog-content ul li {
+    margin: 0.5rem 0;
+  }
 }
 
 /* Contact Section */
 .contact-section {
   text-align: center;
   padding: 4rem 2rem;
-
-  h2 {
-    margin-bottom: 2rem;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.contact-section h2 {
+  margin-bottom: 2rem;
+}
+
+/* Contact Form Styles */
 .contact-form {
   display: flex;
+  width: 40rem;
   flex-direction: column;
   gap: 1.5rem;
   padding: 40px;
@@ -316,6 +431,7 @@ body {
   color: rgba(10, 3, 145, 0.6);
 }
 
+/* Contact Form Button Styles */
 .contact-form button {
   padding: 1rem 2rem;
   background-color: #ffd700;
@@ -326,10 +442,12 @@ body {
   transition: background-color 0.3s ease;
 }
 
+/* Contact Form Button Hover State */
 .contact-form button:hover {
   background-color: #fff;
 }
 
+/* Social Icons Styles */
 .social-icons {
   margin-top: 2rem;
   display: flex;
@@ -343,11 +461,12 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* Social Icons Hover State */
 .social-icons a:hover {
   transform: scale(1.2);
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
   text-align: center;
   padding: 2rem;
@@ -382,9 +501,17 @@ footer p {
   }
 }
 
-@media (max-width: 480px) {
-  .projects-container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* Media Queries for Small Screens */
+@media screen and (max-width: 480px) {
+  .full-blog-post-container {
+    font-size: 0.8rem;
+    gap: 2rem;
+
+    p,
+    h2,
+    h3 {
+      margin-top: 0.8rem;
+    }
   }
 
   .about-me {
@@ -409,14 +536,82 @@ footer p {
   }
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .projects-container {
+/* Media Queries for Medium Screens */
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 0.8rem;
+  }
+
+  .main-nav {
+    display: none;
+    border-radius: 5px;
+    flex-direction: column;
+    background-color: rgba(10, 3, 145, 0.963);
+    position: absolute;
+    width: 50%;
+    top: 62px;
+    right: 20px;
+    padding: 0;
+  }
+
+  .main-nav a {
+    padding: 15px;
+    border-bottom: 1px solid #555;
+  }
+
+  .main-nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* Make the menu button visible */
+  .menu-toggle {
     display: flex;
+    justify-content: flex-end;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+  }
+
+  /* When the checkbox with id "menuToggle" is checked, display the main navigation menu */
+  #menuToggle:checked ~ .main-nav {
+    display: flex;
+  }
+
+  /* Hide the checkbox input (but still use it to control the menu) */
+  #menuToggle {
+    display: none;
+  }
+  .full-blog-post-container {
+    font-size: 0.8rem;
+    gap: 2rem;
+
+    p,
+    h2,
+    h3 {
+      margin-top: 0.8rem;
+    }
+  }
+
+  .contact-form {
+    width: 20rem;
+  }
+
+  .projects-container {
+    display: flex !important;
+    flex-direction: column;
   }
 
   .about-me {
     flex-direction: column;
+  }
+
+  /* 
+    This CSS rule targets an element with the id "cta-contact-me" 
+    that is a === descendant === of an element with the class "about-me-cta-button-container". 
+    It sets the display property of this element to "none", effectively hiding it from view.
+  */
+  .about-me-cta-button-container [id="cta-contact-me"] {
+    display: none;
   }
 
   .main-title {
@@ -447,9 +642,14 @@ footer p {
   .read-more {
     padding: 0.4rem 1rem;
   }
+
+  .blog-section {
+    flex-direction: column;
+  }
 }
 
-@media (max-width: 1200px) {
+/* Media Queries for Large Screens */
+@media screen and (max-width: 1200px) {
   .projects-container {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
