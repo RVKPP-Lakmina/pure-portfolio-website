@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/styles/styles.css" />
+    <title>Contact - Pramesh Lakmina</title>
+  </head>
+  <body>
+    <header class="hero-header">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <h1 class="main-title">Contact Me</h1>
+    </header>
+
+    <section class="contact-section">
+      <h2>Get In Touch</h2>
+      <form class="contact-form" action="submit-form-url" method="POST">
+        <label for="name">Your Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="John Dore"
+        />
+
+        <label for="email">Your Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="YourEmail@email.com"
+        />
+
+        <label for="message">Your Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+          placeholder="Message here..."
+        ></textarea>
+
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Pramesh Lakmina | All Rights Reserved.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
